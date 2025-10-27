@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Happy Birthday Buboo0oo 🎉</title>
+  <style>
+    :root {
+      --bg: #fff0f5;
+      --accent: #ff69b4;
+      --card: #ffffff;
+      --text: #4b5563;
+      --shadow: rgba(0,0,0,0.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    p.subtitle {
+      font-size: 1.1rem;
+      color: #6b7280;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px var(--shadow);
+      margin-bottom: 30px;
+      transition: all 0.8s ease;
+      opacity: 0;
+      transform: translateY(30px);
+      display: none;
+    }
+
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
+      display: block;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px var(--shadow);
+      transition: transform .3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .message {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin: 20px 0;
+      color: #374151;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #ff85c1;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      color: #9ca3af;
+      font-size: 14px;
+    }
+
+    /* Efek hati melayang */
+    @keyframes hearts {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-800px) scale(1.5); opacity: 0; }
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -10px;
+      color: var(--accent);
+      font-size: 24px;
+      animation: hearts 4s linear infinite;
+      pointer-events: none;
+    }
+
+    /* Musik tersembunyi */
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Happy Birthday Buboo0oo 🎉🎉🎉</h1>
+    <p class="subtitle">🎂Tambah tua, tapi jangan tambah nyebelin yaa...💖</p>
+  </header>
+
+  <div class="container">
+    <!-- Tombol pertama -->
+    <button class="btn" id="showUcapan">Something for u💌</button>
+
+    <!-- Ucapan muncul setelah tombol ditekan -->
+    <div class="card" id="ucapanCard">
+      <h2>💌</h2>
+     <p class="message">
+🎉🎂 Selamat Ulang Tahunn Sayangkuu 💖<br><br>
+Semoga di umur yang ke-22 tahun ini kamu bisa menjadi tambah dewasaa 🥰💪  
+Di hari yang paling special ini aku cuma pengen kamu tau kalo aku bersyukur banget bisa ketemu sama kamu 💕  
+Aku minta maaf kalo kamu ketemu akunya pas kondisiku lagi banyak masalah 😔 tapi dengan hadirnya kamu di kehidupanku tuh secuil harapan 🌈  
+yang tiba-tiba datang buat nyuruh aku survive lebih lama lagii 😭💫  
+<br><br>
+Aku tau kita baru deket belum ada satu bulan ⏳ tapi aku ngerasanya kita udah kenal lama banget 😳  
+Kaya isyarat dari alam semesta ✨ bahwa sudah saatnya memulai sesuatu yang baru dan indahh 🌸💞  
+Terimakasih banyak ya udah datang ke kehidupanku 🙏💗  
+<br><br>
+Tahun ini mungkin agak beda ya buat kamu 🥹 karena ini pertama kali kamu ultah pas sama akuu 😝🎈  
+Semoga kamu bisa selalu sabar ngehadepin aku yang banyak dramanya inii 😅🎭  
+dan nggak bosen-bosen sama akuu 😚💋  
+<br><br>
+Kayanya ini bakal jadi awal dari perjalanan kita 🚀💞  
+So, how about it? 😉 Are you ready for us to take the first step and commit to this journey together? 💍💫  
+Aku pengen jadi tempatmu pulang saat duniamu lagi nggak baik-baik aja 🌙💤  
+<i>I’ll always be here for you, Bubo 💌🐻</i>  
+<br><br>
+Sekali lagi, terimakasih banyak sudah datang ke kehidupankuu 💕  
+🎉🥳 HAPPY BIRTHDAY BUBOO0OOO!!! 🎂💖🎈
+</p>
+
+      <button class="btn" id="showGaleri">Foto Cantiknya AKUU 📸</button>
+    </div>
+
+    <!-- Galeri muncul setelah tombol kedua ditekan -->
+    <div class="card" id="galeriCard">
+      <h2>📸</h2>
+      <div class="gallery">
+        <img src="bubo1.jpg" alt="cantiknya akohh">
+        <img src="bubo2.jpg" alt="cantiknya akohh">
+        <img src="bubo4.jpg" alt="cantiknya akohh">
+        <img src="bubo3.jpg" alt="cantiknya akohh">
+        <img src="bubo5.jpg" alt="cantiknya akohh">
+        <img src="bubo6.jpg" alt="cantiknya akohh">
+        <img src="bubo7.jpg" alt="cantiknya akohh">
+        <img src="bubo8.jpg" alt="cantiknya akohh">
+        <img src="bubo9.jpg" alt="cantiknya akohh">
+        <img src="bubo10.jpg" alt="cantiknya akohh">
+        <img src="bubo11.jpg" alt="cantiknya akohh">
+        <img src="bubo12.jpg" alt="cantiknya akohh">
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; <span id="year"></span> Dibuat dengan penuh cinta 💞 oleh AdeGyasi
+  </footer>
+
+  <!-- Musik otomatis (tersembunyi) -->
+  <audio id="music" autoplay loop>
+    <source src="justtheway.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Efek hati melayang
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '❤';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (3 + Math.random() * 2) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHeart, 400);
+
+    // Musik tetap berjalan di beberapa browser
+    const music = document.getElementById('music');
+    document.addEventListener('click', () => {
+      music.play().catch(() => {});
+    });
+
+    // Tombol interaktif
+    const btnUcapan = document.getElementById('showUcapan');
+    const ucapanCard = document.getElementById('ucapanCard');
+    const btnGaleri = document.getElementById('showGaleri');
+    const galeriCard = document.getElementById('galeriCard');
+
+    btnUcapan.addEventListener('click', () => {
+      ucapanCard.classList.add('show');
+      btnUcapan.style.display = 'none';
+    });
+
+    btnGaleri.addEventListener('click', () => {
+      galeriCard.classList.add('show');
+      btnGaleri.style.display = 'none';
+    });
+  </script>
+</body>
+</html>

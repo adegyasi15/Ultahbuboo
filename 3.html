@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Untuk Kamu 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      /* 🌈 Gradasi lembut dari pink ke peach + efek cahaya radial */
+      background: radial-gradient(circle at top left, #ffe6f0 0%, #ffb6c1 40%, #ff69b4 70%, #ff8fab 100%);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+      text-align: center;
+      position: relative;
+      transition: background 2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      z-index: 10;
+      text-shadow: 0 0 10px rgba(255,255,255,0.8);
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      z-index: 10;
+    }
+
+    /* Tombol love */
+    .love-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 4rem;
+      color: white;
+      animation: pulse 1.2s infinite ease-in-out;
+      transition: transform 0.3s ease;
+      z-index: 10;
+    }
+
+    .love-button:hover {
+      transform: scale(1.3);
+      color: #ffeff7;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.8; }
+    }
+
+    /* Efek hujan bunga */
+    .flower {
+      position: absolute;
+      top: -50px;
+      font-size: 2rem;
+      animation: fall 6s linear infinite;
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Kue emoji tengah */
+    .cake {
+      position: absolute;
+      bottom: 50%;
+      transform: translateY(50%);
+      font-size: 20rem;
+      z-index: 1;
+      animation: flicker 1s infinite alternate;
+      text-shadow: 0 0 15px #ffcc00, 0 0 30px #ff9900;
+    }
+
+    @keyframes flicker {
+      0% { text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900; }
+      100% { text-shadow: 0 0 20px #ffee33, 0 0 40px #ffcc33; }
+    }
+
+    /* Matahari */
+    .sun {
+      position: absolute;
+      top: 40px;
+      right: 60px;
+      font-size: 10rem;
+      animation: rotateSun 20s linear infinite;
+      z-index: 0;
+      filter: drop-shadow(0 0 20px #fff176);
+    }
+
+    @keyframes rotateSun {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Rumput hijau */
+    .grass {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(to top, #2e8b57, #3cb371, #90ee90);
+      border-top-left-radius: 50% 20px;
+      border-top-right-radius: 50% 20px;
+      z-index: 1;
+    }
+
+    /* Taman bunga di atas rumput */
+    .flower-garden {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 2rem;
+      z-index: 2;
+      animation: sway 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes sway {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-5px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="sun">🌞</div>
+
+  <h1>HAPPY BIRTHDAY BUBOO0O 🧸💕</h1>
+  <p>Pencet yaa lovenyaa biar makin cintaa🥰💖</p>
+
+  <div class="cake">🎂</div>
+
+  <audio id="introMusic" src="Just the Way You Are.mp3"></audio>
+
+  <button class="love-button" id="startBtn">❤️</button>
+
+  <!-- Rumput dan bunga -->
+  <div class="grass"></div>
+  <div class="flower-garden">
+    🌸🌼🌷🌹🌻🌺🌸🌼🌷🌹🌻🌺🌸🌼🌷🌹🌻🌺🌸🌼🌷🌹🌻🌺🌸🌼🌷🌹🌻🌺🌸🌼🌷🌹🌻🌺
+     🌸🌼🌷🌹🌻🌺🌸🌼🌷🌹🌻🌺🌸🌼🌷🌹🌻🌺🌸🌼🌷🌹🌻🌺🌸🌼🌷🌹🌻🌺🌸🌼🌷🌹🌻🌺
+  </div>
+
+  <script>
+    const audio = document.getElementById('introMusic');
+    const btn = document.getElementById('startBtn');
+
+    btn.addEventListener('click', () => {
+      audio.play();
+      btn.innerHTML = "💖";
+      setTimeout(() => {
+        window.location.href = "4.html";
+      }, 10000);
+    });
+
+    // Efek hujan bunga
+    function createFlower() {
+      const flower = document.createElement('div');
+      flower.classList.add('flower');
+      flower.textContent = '🌻';
+      flower.style.left = Math.random() * 100 + 'vw';
+      flower.style.animationDuration = (4 + Math.random() * 3) + 's';
+      document.body.appendChild(flower);
+      setTimeout(() => flower.remove(), 7000);
+    }
+
+    setInterval(createFlower, 400);
+  </script>
+</body>
+</html>
